@@ -1,0 +1,19 @@
+<html>
+<head>
+
+<title>eg</title></head>
+<body>
+<?php
+include("db-config.php");
+
+$table='accounts';
+$result=$mysqli->query("SELECT * FROM $table") or die($mysqli->error); 
+while($data = $result->fetch_assoc()){
+    // print_r($data);
+    echo $data['id'];
+    echo "<br>";
+}
+?>
+
+</body>
+</html>

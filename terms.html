@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="logged-out-1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"ecbe44911a",applicationID:"35958959"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <title>Terms of Use</title>
+    <meta name="description" content="Terms of use"/>
+    <meta name="theme-color" content="#A3D9DE">    <link rel="author" href="https://plus.google.com/117480045292551501788">
+    <link rel="shortcut icon" href="https://drive.google.com/thumbnail?id=1voMm2-SjUXa1mz47W_2NuDXjR4YvwBY5" type="image/x-icon">
+    <link rel="icon" href="https://drive.google.com/thumbnail?id=1voMm2-SjUXa1mz47W_2NuDXjR4YvwBY5" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://drive.google.com/thumbnail?id=1voMm2-SjUXa1mz47W_2NuDXjR4YvwBY5">
+    <meta property="fb:app_id" content="310261842437710" />
+    <meta property="og:site_name" content="Faceoff" />
+    <meta property="og:image" content="http://d1r8m46oob3o9u.cloudfront.net/images/Faceoff-results-sample-2.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <script>
+        window.pfDeferredFunctions = window.pfDeferredFunctions || [];
+        function pfDocumentReady(f) {
+            if (window.pfDeferredFunctions === null) {f();} else {window.pfDeferredFunctions.push(f);}
+        }
+    </script>
+    <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script crossorigin="anonymous" defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script crossorigin="anonymous" defer src="https://d1r8m46oob3o9u.cloudfront.net/js/2021-04-22-13-42-27/www-all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://d1r8m46oob3o9u.cloudfront.net/css/2021-04-22-13-42-27/www-all.min.css">
+    <meta id="pfViewport" name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function viewportUpdate() {
+            var estimatedWidth = (window.innerWidth < window.innerHeight ? Math.min(screen.width, screen.height) : Math.max(screen.width, screen.height));
+            if (estimatedWidth < 320) {
+                document.getElementById('pfViewport').setAttribute('content','width=320, initial-scale='+(estimatedWidth/320));
+            } else {
+                document.getElementById('pfViewport').setAttribute('content','width=device-width, initial-scale=1');
+            }
+        }
+        viewportUpdate();
+        $(window).on('resize', viewportUpdate);
+    </script>
+    <script>
+        var ga_account = "UA-40617210-2";
+        pfDocumentReady(function() {
+            BrowserDetection.init();
+            window.PageError.initialize(false);
+        });
+    </script>
+</head>
+<body class="terms">
+          <div class="navbar navbar-placeholder"></div>      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+          <div class="container">
+                <div class="navbar-header logged-out hidden-xs" style="float:none">
+                    <h1 style="margin:0">                        <a class="navbar-brand" href="/">
+                            <img class="long" src="https://drive.google.com/thumbnail?id=1TijMTEgmSxyiVhTNhy8PVDSTN-uqZ1Bt" alt="Faceoff">
+                            <img class="short" src="https://drive.google.com/thumbnail?id=1voMm2-SjUXa1mz47W_2NuDXjR4YvwBY5" alt="Faceoff">
+                        </a>
+                    </h1>
+                    <ul class="nav navbar-nav pull-right">
+
+                        <li>
+                            <a href="http://www.faceoff.ml/login.php">
+                                <div class="btn btn-secondary">Login</div>
+                            </a>
+                        </li>
+                        <li class="hidden-xs">
+                            <a href="http://www.faceoff.ml/signup.php">
+                                <div class="btn btn-primary">Get Started</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          <div class="container visible-xs-block">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <h1 style="margin:0">                        <a class="navbar-brand" href="/">
+                            <img class="long" src="https://drive.google.com/thumbnail?id=1TijMTEgmSxyiVhTNhy8PVDSTN-uqZ1Bt" alt="Faceoff">
+                            <img class="short" src="https://drive.google.com/thumbnail?id=1voMm2-SjUXa1mz47W_2NuDXjR4YvwBY5" alt="Faceoff">
+                        </a>
+                    </h1>
+              </div>
+
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                          <li>
+                                <a class="mobile-signup" href="http://www.faceoff.ml/signup.php">Get Started</a>
+                            </li>
+
+
+                        <li class="sm-80">
+                            <a href="http://www.faceoff.ml/login.php">Login</a>
+                        </li>
+                  </ul>
+                </div>
+            </div>
+        </nav>
+
+<div class="container container-page">
+    <div class="page-header">Terms of Use</div>
+    <p>PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE USING THIS SITE.</p>
+    <p>By visiting and engaging with this site in any way (with or without an account), you signify your assent to these Terms and Conditions ("terms"). If you do not agree to all of these terms, unfortunately, you cannot use this site. This is standard practice, and it is your responsibility to be aware of and abide by it.</p>
+    <p>The Faceoff team ("Faceoff") may revise and update these terms and conditions at any time. Your continued usage of the Faceoff.ml website ("site") will mean you accept those changes.</p>
+
+    <ol>
+        <li><span class="li-title">Use of the site</span>
+            <p>You may only use and become an account-bearing member of Faceoff if you are 13 years of age or older.</p>
+            <p>You warrant that you have the right, authority and capacity to enter into and be bound by all of the terms stated on this page and that by using Faceoff you will not be violating any law or regulation of the country in which you are resident. You are solely responsible for your compliance with all applicable local laws and regulations.</p>
+        </li>
+
+        <li><span class="li-title">Rules regarding content</span>
+            <p>You are able to post things on Faceoff, including photographs/images, text, personal information, contact information, and other content ("content").</p>
+            <p>
+                You may not upload and/or post any content to the site which
+                <ul>
+                    <li>contains expletives or language which could be deemed offensive or is likely to harass, upset, embarrass, alarm or annoy any other person;</li>
+                    <li>is obscene, pornographic or otherwise may offend human dignity;</li>
+                    <li>is abusive, insulting or threatening, or which promotes or encourages racism, sexism, hatred or bigotry;</li>
+                    <li>incorporates the image or likeness of any individual under 13 years of age;</li>
+                    <li>encourages any illegal activity including, without limitation, terrorism, inciting racial hatred or the submission of which in itself constitutes committing a criminal offense;</li>
+                    <li>is defamatory;</li>
+                    <li>relates to commercial activities (including, without limitation, sales, competitions and advertising, links to other websites or premium line telephone numbers);</li>
+                    <li>involves the transmission of "junk" mail or "spam";</li>
+                    <li>contains any spyware, adware, viruses, corrupt files, worm programs or other malicious code designed to interrupt, damage or limit the functionality of or disrupt any software, hardware, telecommunications, networks, servers or other equipment, Trojan horse or any other material designed to damage, interfere with, wrongly intercept or expropriate any data or personal information whether from Faceoff or otherwise; or</li>
+                    <li>itself, or the posting of which, infringes any third party's rights (including, without limitation, intellectual property rights and privacy rights).</li>
+                </ul>
+            </p>
+            <p>
+                Additionally, Faceoff does not permit photo tests for which
+                <ul>
+                    <li>the photo contains no clearly visible people;</li>
+                    <li>the photo subject's gender and/or age is mislabeled;</li>
+                    <li>the photo is extremely racy or explicit (even if not pornographic);</li>
+                    <li>the photo or caption contains messages to photo raters, URLs, screen names, or contact information;</li>
+                    <li>the photo contains multiple photos combined into one image; or</li>
+                    <li>the photo does not appear to be for use in an online profile or genuinely seeking feedback.</li>
+                </ul>
+            </p>
+            <p>Whether or not photos or content meet these criteria is at the sole discretion of Faceoff.</p>
+            <p>You acknowledge that you are solely responsible for, and bear all liability in relation to, any content that you bring to the Faceoff site.</p>
+            <p>You may not under any circumstances use content or assets (including text, images, or screenshots) from the Faceoff website that did not originate from you. You may not use them for commercial purposes, nor non-commercial purposes. Any manner of use at all is disrespectful of other Faceoff users and is an unlawful use of the site.</p>
+            <p>Faceoff reserves the right to terminate your account for any reason, including using content and assets that did not originate from you.</p>
+            <p>When you upload content to Faceoff it can be accessed and viewed by the public. If you do not want such content to be viewed by others, then you should not upload it to Faceoff. Content or information you choose to publicly display is at your own risk.</p>
+            <p>We reserve the right (without obligation) at our sole discretion and without giving you notice, to remove or edit, limit or block access to any content that you upload or submit to Faceoff without any incurring liability to you. We have no obligation to display any content that you submit to Faceoff, nor to check the accuracy or truthfulness of any content submitted to Faceoff, nor to monitor your use or the use of other users of Faceoff.</p>
+        </li>
+
+        <li><span class="li-title">Ownership of content</span>
+            <p>You retain ownership of any content you upload or submit to Faceoff, so as long as you are the rightful owner in the first place.</p>
+            <p>Please note though that by posting or submitting content to , you represent and warrant to us that you have the right to do so, and automatically grant to us a non-exclusive, royalty free, perpetual, worldwide licence to use such content for our research purposes in a wide variety of ways (including, without limitation, making your content and any data associated with it available to Faceoff staff or contractors, whether in whole or in part and in any format or medium currently known or developed in the future, and publicly sharing numbers or statistics of which you or your content is part).</p>
+            <p>We may assign and/or sub-license the above license to affiliates and successors without any further approval.</p>
+            <p>By submitting content to Faceoff you are warranting that you are the exclusive author and owner of that content and you agree that you waive any and all moral rights relating to that content (including, without limitation, the right to be identified as the author).</p>
+            <p>We have the right to disclose your identity to any third party who is claiming that any content posted or uploaded by you to our app or site constitutes a violation of their intellectual property rights or of their right to privacy or any other law.</p>
+            <p>All remaining content (not uploaded or submitted by users) including text, graphics, user interfaces, trademarks, logos, sounds and artwork on Faceoff are owned, controlled or licensed by us and are protected by copyright, trademark and other intellectual property law rights.</p>
+            <p>Other than in relation to content submitted by you to Faceoff, you do not have any rights in relation to the content on Faceoff and you agree that you will not use any content in any manner which may infringe any third party's rights. Without limitation to the foregoing, this means that you agree that you will not copy, modify, adapt, distribute, publish or sell all or any part of the Faceoff app or site or the content contained on it (other than the content submitted by you) to anyone else.</p>
+        </li>
+
+        <li><span class="li-title">Multiple accounts and users</span>
+            <div id="multiple-accounts" style="position:relative;bottom:80px"></div>
+            <p><span style="background-color: #f9f9d2">You are not permitted to create more than one Faceoff account for yourself nor to create an account for anyone other than yourself.</span>
+                If we terminate your account for any reason, you are not permitted to create another one without our permission.
+                Failure to comply with these guidelines may result in termination of all of your accounts and a permanent ban from photo testing with facial recognition enforcement.</p>
+            <p>Only you are authorized to access your account with Faceoff.
+                You must not share your login details with anyone or let anyone else access your account as this jeopardizes the security of the site and submitted content.
+                You are responsible for keeping your login details secret and secure. Faceoff is not liable for any unauthorized access to your account.
+                Faceoff reserves the right to terminate your account if you violate our rules on keeping your login details secure.</p>
+        </li>
+
+        <li><span class="li-title">Dishonest information</span>
+            <p>You will not provide any false personal information to Faceoff, including but not limited to your email address, gender, and age.
+                Tampering with the system via falsely representing yourself or others will result in account termination.</p>
+        </li>
+
+        <li><span class="li-title">The site does not provide business advice</span>
+            <p>The information contained in this website is for general information purposes only. While we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.</p>
+            <p>This site does not direct decision making on your behalf or on behalf of your business. Any business decisions you make as a result of information posted on this site, products sold through this site, or links listed on this site are your responsibility only.</p>
+        </li>
+
+        <li><span class="li-title">Access to the app and site</span>
+            <p>Unfortunately, we can't guarantee that Faceoff will be accessible at all times due to site maintenance, a fault or circumstances which are outside our control, or for any other reason, so Faceoff is provided on an "as is" basis. No warranty is given about the quality, accuracy, functionality, availability or performance of Faceoff and we reserve the right to suspend, withdraw, amend, modify or vary the service provided on Faceoff without notice and without incurring any liability to you.</p>
+            <p>You are responsible for making all the necessary arrangements to ensure you can access Faceoff (including, but not limited to Internet provider and mobile internet provider fees and, any other charges associated with such access). We shall not be held responsible for any reduced functionality you may encounter as result of or in connection with accessing Faceoff through mobile services or any similar service currently known or developed in the future.</p>
+            <p>By accessing Faceoff or agreeing to receive messages or notifications from Faceoff through your mobile phone and/or any other connected media device, you accept that you may incur charges from your internet or mobile service provider. We shall not under any circumstances be liable for such charges.</p>
+            <p>Non-registered users are able to access only that portion of Faceoff that is publicly available. They will not have an account area accessible to them or the ability to upload any content. The extent of registered users' access to Faceoff may be changed or updated from time to time without prior notice and at our discretion.</p>
+        </li>
+
+        <li><span class="li-title">Termination of use by us</span>
+            <p>Sometimes people forget about the terms written here and post content or act in a way while on Faceoff which is not consistent with the purpose of the app or site.
+                If we think that you may be one of those people, then we reserve the right at our sole discretion, at any time and without liability or the need to give you
+                prior notice or to refund any unused, paid services to:
+                suspend or revoke your registration (where applicable) and your right to access and/or use Faceoff or submit any content to Faceoff; and
+                make use of any operational, technological, legal, or other means available to enforce the terms (including without limitation blocking specific IP addresses).
+                We are not obliged to notify you if your access to Faceoff and/or your account area is to be or has been suspended or terminated.
+            </p>
+        </li>
+
+        <li><span class="li-title">Termination of use by you</span>
+            <p>If you contact Faceoff and ask that your account be deleted, we save your profile information for a short time in case you decide to restore your account. Many users are accustomed with deactivating accounts for temporary reasons and will expect us to maintain their information until they return to Faceoff. You will, therefore, be able to restore your account and your profile in its entirety within 30 days of de-activating it. Once your registration is terminated, we have the right to delete any related Content that you have submitted or uploaded to Faceoff.</p>
+        </li>
+
+        <li><span class="li-title">Abuse/Complaints</span>
+            <p>You can report any abuse or complain about content on Faceoff by contacting us, outlining the abuse and or complaint.</p>
+        </li>
+
+        <li><span class="li-title">Privacy Policy</span>
+            <p>We process information in accordance with our Privacy Policy which is incorporated into these terms and conditions of use. Please read the terms of our Privacy Policy prior to using Faceoff. By using Faceoff, you agree to such processing and you warrant that all data provided by you is true, correct and accurate.</p>
+        </li>
+
+        <li><span class="li-title">Links</span>
+            <p>Faceoff may contain links to other sites, resources and purchase opportunities provided by third parties. These links are provided to you for your information only. If you access these links you may be directed to third-party sites. These third party sites will have their own terms of use and privacy policies, which may differ from our own stated here. The display of links to third party sites does not constitute an endorsement by us of any of the third party content information, sites, or resources provided.</p>
+            <p>Please note that we have no control over the contents of any third-party sites or resources, and we accept no responsibility for them, including (but not limited to) the third party site's compliance with any applicable laws or regulations.</p>
+        </li>
+
+        <li><span class="li-title">Disclaimer of warranties and limitation of liability</span>
+            <p>If for any reason your use of the Faceoff site elicits legal threats or consequences to you, we expressly disclaim any and all responsibility and liability for your conduct or the conduct of any other user of Faceoff, and expressly disclaim any liability for content uploaded by you or by any other user.</p>
+        </li>
+
+        <li><span class="li-title">Expiration of Credits</span>
+            <div id="expiration" style="position:relative;bottom:80px"></div>
+            <p>Credits may be expired on or beyond one year from the purchase date. A credit's lifetime cannot exceed the lifetime of the service.</p>
+        </li>
+
+        <li><span class="li-title">Indemnity</span>
+            <p>If we are sued as a result of your use of Faceoff then we have the right to defend or settle the relevant claim as we see fit. If we ask, you will co-operate fully and reasonably as required by us in the defense of any relevant claim.</p>
+            <p>You agree to hold harmless and indemnify us and our officers, directors, employees, agents, representatives, and licensors from and against any third party claims, damages (actual and/or consequential), actions, proceedings, demands, losses, liabilities, costs, and expenses (including reasonable solicitor's fees) suffered or reasonably incurred by us arising as a result of, or in connection with, your access to and use of Faceoff, the uploading or submission of content to Faceoff by you or your conduct, other than in accordance with the terms or any applicable law or regulation ("Claim"). Faceoff retains the exclusive right to settle, compromise and pay any and all Claims or causes of action which are brought against us without your prior consent.</p>
+        </li>
+
+        <li><span class="li-title">Jurisdiction</span>
+            <p>You expressly agree that exclusive jurisdiction for any dispute with Faceoff or in any way relating to your use of the site, resides in the courts of the State of Colorado and you further agree and expressly consent to the exercise of personal jurisdiction in the courts of the State of Colorado in connection with any such dispute including any claim involving Faceoff or its affiliates, subsidiaries, employees, contractors, officers, directors, telecommunication providers, and content providers.</p>
+            <p>These terms are governed by the internal substantive laws of the State of Colorado, without respect to its conflict of laws principles.</p>
+        </li>
+
+        <li><span class="li-title">Miscellaneous</span>
+            <p>Faceoff has taken reasonable steps to ensure the currency, availability, correctness, and completeness of the information contained on Faceoff and provides that information on an "as is", "as available" basis. Faceoff does not give or make any warranty or representation of any kind about the information contained on Faceoff, whether express or implied. Use of Faceoff and the materials available on it is at your sole risk. Faceoff cannot be held responsible for any loss arising from the transmission, use of data, or inaccurate content posted by users. You are responsible for taking all necessary precautions to ensure that any material you may obtain from Faceoff is free of viruses or other harmful components. You accept that Faceoff will not be provided uninterrupted or error-free, that defects may not be corrected or that Faceoff, or the server that makes it available, are free of viruses or bugs, spyware, Trojan horses or any similar malicious software. Faceoff is not responsible for any damage to your computer hardware, computer software, or other equipment or technology including, but without limitation damage from any security breach or from any virus, bugs, tampering, fraud, error, omission, interruption, defect, delay in operation or transmission, computer line or network failure or any other technical or other malfunction.</p>
+            <p>We reserve the right to modify, amend or change these terms at any time (a "change"). In certain circumstances, we may send an email to you notifying you of any change. You should regularly check this page to take notice of any changes.</p>
+            <p>If you do not accept any change to the terms, you should stop using Faceoff immediately. Your continued use of Faceoff following any change constitutes your acceptance of the change and you will be legally bound by the newly updated terms.</p>
+            <p>If, for any reason, any of the terms are declared to be illegal, invalid or otherwise unenforceable by a court of a competent jurisdiction, then to the extent that term is illegal, invalid or unenforceable, it shall be severed and deleted from the terms and the remainder of the terms shall survive, remain in full force and effect and continue to be binding and enforceable.</p>
+            <p>The terms set out the entire agreement and understanding between us and you in relation to your use of Faceoff and supersedes all previous agreements, representations, and arrangements between us (either oral or written). Nothing in this clause shall limit or exclude any liability for fraudulent misrepresentation.</p>
+            <p>No failure or delay by us in exercising any right, power or privilege under the terms shall operate as a waiver of such right or acceptance of any variation of the terms and nor shall any single or partial exercise by either party of any right, power or privilege preclude any further exercise of that right or the exercise of any other right, power or privilege.</p>
+            <p>Nothing in the terms shall confer or purport to confer on any other third party, any benefit or the right to enforce any term of the terms and the contracts (Rights of Third Parties) Act 1999 shall not apply to the terms.</p>
+        </li>
+
+
+
+    </ol>
+</div>
+      <footer>
+            <div class="footer-content container">
+                
+
+                    <div class="col-sm-3 hidden-xs">
+                        <img src="https://drive.google.com/thumbnail?id=1F3Cnfb83EbV_Nf7hgU2yNxiEI_qaPfR6" alt="Faceoff" />
+                    </div>
+
+                    <div class="col-xs-5 col-xs-offset-1 col-sm-3 col-sm-offset-0 link-list">
+                        <div class="col-head">Account</div>
+                                            <a href="http://www.faceoff.ml/signup.php">Sign Up</a>
+                        <a href="http://www.faceoff.ml/login.php">Login</a>
+                                        </div>
+
+                    <div class="col-xs-6 col-sm-3 link-list">
+                        <div class="col-head">Resources</div>
+                        <a href="http://www.faceoff.ml/">Home</a>
+                        <a href="http://www.faceoff.ml/about.html">About Us</a>
+
+                                        </div>
+
+                    <div class="clearfix"></div>
+                    <div class="visible-xs-block logo-xs">
+                        <img src="https://drive.google.com/thumbnail?id=1F3Cnfb83EbV_Nf7hgU2yNxiEI_qaPfR6" alt="Faceoff" />
+                    </div>
+
+                    <div>
+                        <br />
+                        <a href="http://www.faceoff.ml/terms.html">Terms of Use</a>
+                        <a href="http://www.faceoff.ml/privacy_policy.html">Privacy Policy</a><br />
+                        &copy; 2021 FaceOff.ml
+                        <br />
+                        &reg; Contact : <em> admin-sumit@faceoff.ml </em>
+                        
+                    </div>
+
+                </div>            </div>        </footer>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"ecbe44911a","applicationID":"35958959","transactionName":"M1MHZUZZW0RWVURZDQoZMENdF0FSRVtDHhIMRg==","queueTime":0,"applicationTime":44,"atts":"HxQEEw5DSEo=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>

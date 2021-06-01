@@ -1,0 +1,15 @@
+long logo :- https://drive.google.com/thumbnail?id=1TijMTEgmSxyiVhTNhy8PVDSTN-uqZ1Bt
+
+short logo :- https://drive.google.com/thumbnail?id=1voMm2-SjUXa1mz47W_2NuDXjR4YvwBY5
+
+short logo low pixels :- https://drive.google.com/thumbnail?id=1F3Cnfb83EbV_Nf7hgU2yNxiEI_qaPfR6
+
+pranshu jpg:- https://drive.google.com/uc?id=1ZMGP1pI6-Qzr5aQUNz2oZm_oZq8rfPFz
+
+pranshuBW jpg :-  https://drive.google.com/uc?id=1Qc7Vx5s5hTYFWwLd-0Vgwx-GLreUGoqx
+
+sumit jpg:- https://drive.google.com/uc?id=1nYzsaG35EecEJyLHXjuM8i_NEvbIFMSv
+
+signup faceoff logo :-https://drive.google.com/thumbnail?id=1qycWcJAmWgvKLQBK72vYoyVYta0Zcy-2
+
+upload vector=https://drive.google.com/thumbnail?id=1LBUIuwhJKkFQkiO_x-P7Yqu2qQ8lPrm_

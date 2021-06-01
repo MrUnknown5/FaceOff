@@ -1,0 +1,7 @@
+CREATE TABLE globalimages (
+  imagename varchar(255) NOT NULL,
+  vote_1_competent int(11),
+    vote_2_likable int(11),
+    vote_3_influential int(11),
+PRIMARY KEY (filename)
+) ;
